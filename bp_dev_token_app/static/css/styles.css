@@ -1,0 +1,15 @@
+
+/* Styles: dev_token_app  */
+/* Store only the styles specific to the the current blueprint in this file */
+/* Any global styles store in the styles_global under base blueprint */
+
+
+/* [id*="developer_info_div"]:hover .remove_developer_btn { */
+.developer_info_div:hover .remove_developer_btn {
+    visibility: visible;
+}
+
+/* Hoverring over the element show the "assign_developer_btn" button */
+.app_info_div:hover .assign_developer_btn{
+    visibility: visible;
+}

@@ -1,0 +1,71 @@
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Added by     : Wangchuk, 21-05-2025 -->
+<!-- BluePrint    : bp_dev_token_app   -->
+<!-- File         : dev_token_apps.html  -->
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Extend base layout -->
+{% extends "base_template.html" %}
+
+<!-- Title -->
+{% block title %}
+Dev Token App
+{% endblock %}
+
+
+<!-- CSS Links -->
+{% block css_styles %}
+{% include 'bp_dev_token_app_templates/links_css.html' %}
+{% endblock %}
+
+
+<!-- Body -->
+{% block body %}
+
+{% include 'bp_dev_token_app_templates/links_modal.html' %} <!-- Include modal links -->
+
+<div class="container-fluid w-100 h-100 d-flex align-items-center justify-content-center bg-dark prevent_text_selection">
+    <div id="dev_token_app_div" class="w-40 position-absolute bg-oslogray rounded ">
+
+        {% for app in all_apps %}
+        <!-- App and Developer row -->
+        <div class="row m-1  bg-orange p-2 rounded d-flex align-items-center" id="app_and_developer_info_div_{{loop.index0}}">
+
+            <!-- App Info Div-->
+            <div class="col-sm-7  d-flex align-items-center app_info_div" data-app_id="{{ app.id }}" data-app_name="{{ app.name }}">
+                <span class="{{'text-dark' if app.app_in_dev_by else 'text-oslogray' }} text-bold font-2 mx-2 app_name_tag">{{ app.name }}</span>
+                {% if not app.app_in_dev_by %}
+                <span class="hide bg-lightgray px-2 rounded text-orange cursor-pointer small hover-bg-lightgray assign_developer_btn " onclick="loadModalAssignDeveloper(this)"> + Developer</span>
+                {% endif %}
+            </div>
+
+            <!-- Developer Info Div -->
+            <div class="col-sm-5 ">
+                {% if app.app_in_dev_by %}
+                <div class="row developer_info_div" data-developer_id="{{app.app_in_dev_by.id }}" data-developer_name="{{app.app_in_dev_by.name }}">
+                    <div class="col-sm-9 text-center py-1 bg-light">
+                        <span class="h6 developer_name_tag"> {{ app.app_in_dev_by.name }} </span>
+                    </div>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        <span class="hide bg-danger px-2 rounded text-light cursor-pointer small hover-bg-lightgray hover-text-red remove_developer_btn " onclick="removeDeveloper(this)"> <small>Remove</small> </span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+{% endblock %}
+
+<!-- Javascript links -->
+{% block javascript_modules %}
+    {% include 'bp_dev_token_app_templates/links_js.html' %}
+{% endblock %}

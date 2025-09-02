@@ -1,0 +1,35 @@
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Added by     : Wangchuk, 21-05-2025 -->
+<!-- BluePrint    : app   -->
+<!-- File         : web_apps.html  -->
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Extend base alyout -->
+{% extends "base_template.html" %}
+
+<!-- Title -->
+{% block title %}
+CabTek Web Apps
+{% endblock %}
+
+<!-- Body -->
+{% block body %}
+<div class="h-100 w-100 d-flex align-items-center justify-content-center">
+    <!-- Link to Dev Token App -->
+    <div class="row w-50">
+        <div class="col-sm-4 offset-4">
+            <span class="w-100 py-3 btn btn-dark" onclick="redirectToWebApp('bp_dev_token_app')">Dev Token App</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+<span class="">Copyright@2025-2050</span>
+{% endblock %}
+
+<!-- Javascript Links -->
+{% block javascript_modules %}
+<script src="{{ url_for('static', filename='js/web_apps.js')}}" type="text/javascript"></script>
+{% endblock %}

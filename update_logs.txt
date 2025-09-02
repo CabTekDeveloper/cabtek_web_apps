@@ -1,0 +1,38 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+***************************************  Update logs: CabTek Web Apps   *******************************************************************
+-----------------------------------------------------------------------------------------------------------------------------------------
+bp : Blueprint
+-----------------------------------------------------------------------------------------------------------------------------------------
+21-05-2025	Wangchuk
+=> Added bp "bp_dev_token_app".
+	- This bp is to show a web page of the apps list and developer working on it.
+=> Created cabtek_web_apps.db and stored in Shared Database folder on Manager1 PC
+	- Added tables to database and entered records.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+22-05-2025	Wangchuk
+=> Added JS function to move HTML element to a different position on a window.
+=> Added a new route "dev_toke_apps" to routes.py of bp_dev_token_app
+-----------------------------------------------------------------------------------------------------------------------------------------
+23-05-2025	Wangchuk
+=> Added modal_assign_developer.js amd modal_assign_developer.html
+=> Removed bp_base and moved the global files into app folder
+=> Moved db_manager folder into app folder
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+30-05-2025	Wangchuk
+=> Added button to remove developer name from an app
+=> Aded user validation when adding or removing developer name from an app in the Deve Token App 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+03-06-2025	Wangchuk
+=> Moved all global helper functions inside the static Global Helper class.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+12-06-2025 Wangchuk
+=> Modified bp_dev_token_app to refresh page everytime a developer is removed or added to an App.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+03-09-2025 Wangchuk
+=> Made the size of divs smaller in "dev_token_apps.html".
+

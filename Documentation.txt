@@ -1,0 +1,47 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Documentation	: CabTek Web Apps 
+Added			: Wangchuk
+Date Added		: 26-05-2025
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Purpose	of "CabTek Web Apps"
+-To have one entry point for all the inhouse web apps. 
+-Eliminate the web apps requiring unique port numbers for hosting when they are hosted individually. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Acronyms
+	- bp 	: Blueprint
+	- db 	: Database
+	- js 	: JavaScript
+	- css	: Cascading Style Sheets
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Files and folders details
+1. run.py	: This is the main entry point for the app.
+			: Any web apps(bp) need to be imported into this file and then registered to the main app "app"
+
+2. Folder app
+	- This folder contains the main-app "app". 
+	- __init__.py		: The app is created in this file.
+	- route.py			: Import app into this file and create all the app routes in it.
+	- static folder		: Stores all the static files (js, css, images, db managers, etc.) used globally in other bps.
+	- template folder	: Stores "base_template.html" and the html files specific to the main-app "app".
+
+3. Folder bp_dev_token_app
+	- This folder conatains the bp "bp_dev_token_app"
+	- Purpose of this bp: To display all CabTek apps and the developer working on it.
+	- __init__.py		: The bp bp_dev_token_app is created in this file.
+	- route.py			: Import bp bp_dev_token_app into this file and create all bp_dev_token_app routes in it.
+	- static folder		: Stores all the static files (js, css, images, db managers, etc.) specific to the current bp.
+	- template folder	: Create a sub-folder named same as the current bp to prevent the confusion between the main-app's template folder.
+						: The sub-folder stores all the html files specific to the current bp.
+						: The html files in this template folder should extend the "base_template.html" to import global static files from the mia-app "app".
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
