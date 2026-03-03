@@ -1,0 +1,46 @@
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Added by     : Wangchuk, 04-03-2026 -->
+<!-- BluePrint    : bp_weather_app   -->
+<!-- File         : weather.html  -->
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Extend base layout -->
+{% extends "base_template.html" %}
+
+<!-- Title -->
+{% block title %}
+Weather
+{% endblock %}
+
+
+<!-- CSS Links -->
+{% block css_styles %}
+{% include 'bp_weather_app_templates/links_css.html' %}
+{% endblock %}
+
+<!-- Body -->
+{% block body %}
+
+<div onload="startTime()">
+    <div class="background-page">
+        <iframe
+            src="https://www.rainviewer.com/map.html?loc=-35.3284,149.1262,9.444851065255325&oCS=1&oAP=1&c=3&o=83&lm=1&layer=radar&sm=1&sn=1&ts=1"
+            width="100%" frameborder="0" style="border:0;height:99.6vh;" allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="top-layer clock-style" id="clock">
+        <!-- JS will add clock here -->
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+{% endblock %}
+
+<!-- Javascript links -->
+{% block javascript_modules %}
+{% include 'bp_weather_app_templates/links_js.html' %}
+{% endblock %}

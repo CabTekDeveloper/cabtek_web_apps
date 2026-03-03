@@ -1,0 +1,34 @@
+/* Styles: bp_weather_app  */
+/* Store only the styles specific to the the current blueprint in this file */
+/* Any global styles store in the styles_global under base blueprint */
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background-page {
+    position: relative;
+    z-index: 1;
+}
+
+.top-layer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: 10;
+    overflow: auto;
+}
+
+.clock-style {
+    font-size: 12vw;
+    /* background-color: orange; */
+    color: red;
+    padding: 0 30px 0 30px;
+    margin: 0;
+    font-weight: bolder;
+    font-family: monospace;
+}

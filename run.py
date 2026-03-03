@@ -8,10 +8,12 @@
 from waitress import serve
 from app import app
 from bp_dev_token_app import bp_dev_token_app
+from bp_weather_app import bp_weather_app
 
 #----------------------------------------------------------------------------------------------------------------------------#
 
 app.register_blueprint(bp_dev_token_app, url_prefix="/bp_dev_token_app")
+app.register_blueprint(bp_weather_app, url_prefix="/bp_weather_app")
 
 #----------------------------------------------------------------------------------------------------------------------------#
 if __name__ == '__main__':
